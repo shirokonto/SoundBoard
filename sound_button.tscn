@@ -14,8 +14,8 @@ script = ExtResource("1_oob3b")
 
 [node name="SoundButton" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 144.0
+offset_bottom = 96.0
 
 [node name="MarginContainer" type="MarginContainer" parent="SoundButton"]
 layout_mode = 0
