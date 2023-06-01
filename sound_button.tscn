@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsgr2bhj6xuj0"]
 
-[ext_resource type="Script" path="res://sound_button.gd" id="1_oob3b"]
+[ext_resource type="Script" path="res://SoundButton.gd" id="1_ob8a7"]
 [ext_resource type="Texture2D" uid="uid://1huphppj525i" path="res://art/notifications_FILL0_wght700_GRAD0_opsz48.svg" id="2_4bebj"]
 
 [node name="SoundButton" type="Control"]
@@ -10,20 +10,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_oob3b")
+script = ExtResource("1_ob8a7")
 
 [node name="SoundButton" type="Button" parent="."]
-layout_mode = 0
-offset_right = 144.0
-offset_bottom = 96.0
+layout_mode = 2
+offset_right = 60.0
+offset_bottom = 85.0
 
 [node name="MarginContainer" type="MarginContainer" parent="SoundButton"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 60.0
+offset_bottom = 85.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SoundButton/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 1
 
 [node name="TextureRect" type="TextureRect" parent="SoundButton/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -31,10 +36,16 @@ texture = ExtResource("2_4bebj")
 
 [node name="Label" type="Label" parent="SoundButton/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Bell"
+text = "Name"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="SoundButton"]
-layout_mode = 0
+layout_mode = 2
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 10
+text = "7"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="SoundButton" to="." method="_on_sound_button_pressed"]
