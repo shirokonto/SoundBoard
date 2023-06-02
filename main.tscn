@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://chsg8dpkdb82y"]
+[gd_scene load_steps=5 format=3 uid="uid://chsg8dpkdb82y"]
 
 [ext_resource type="PackedScene" uid="uid://dsgr2bhj6xuj0" path="res://sound_button.tscn" id="1_pbann"]
 [ext_resource type="Script" path="res://SoundButton.gd" id="2_llcw6"]
 [ext_resource type="AudioStream" uid="uid://bmunkuxy6c6k1" path="res://sound/cricket-sound-113945.mp3" id="3_bvi77"]
+[ext_resource type="AudioStream" uid="uid://cdp33e0i3it8d" path="res://sound/error-126627.mp3" id="4_23m4s"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -27,11 +28,6 @@ theme_override_constants/margin_bottom = 35
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 35
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -72,38 +68,54 @@ text = "Label 2"
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2"]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/h_separation = 114
-theme_override_constants/v_separation = 114
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(260, 315)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 115
 columns = 3
 script = ExtResource("2_llcw6")
 
-[node name="SoundButton1" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_pbann")]
-layout_mode = 2
-
-[node name="SoundButton2" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_pbann")]
+[node name="SoundButton1" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
 sfx = ExtResource("3_bvi77")
+inputAction = "sound1"
 
-[node name="SoundButton3" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_pbann")]
+[node name="SoundButton2" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+sfx = ExtResource("3_bvi77")
+inputAction = "sound2"
 
-[node name="SoundButton4" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_pbann")]
+[node name="SoundButton3" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+sfx = ExtResource("4_23m4s")
+inputAction = "sound3"
 
-[node name="SoundButton5" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_pbann")]
+[node name="SoundButton4" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+inputAction = "sound4"
 
-[node name="SoundButton6" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_pbann")]
+[node name="SoundButton5" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+inputAction = "sound5"
 
-[node name="SoundButton7" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_pbann")]
+[node name="SoundButton6" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+inputAction = "sound6"
 
-[node name="SoundButton8" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_pbann")]
+[node name="SoundButton7" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+inputAction = "sound7"
 
-[node name="SoundButton9" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_pbann")]
+[node name="SoundButton8" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+inputAction = "sound8"
+
+[node name="SoundButton9" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
+layout_mode = 2
+inputAction = "sound9"
