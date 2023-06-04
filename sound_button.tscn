@@ -34,18 +34,18 @@ theme_override_constants/separation = 1
 layout_mode = 2
 texture = ExtResource("2_4bebj")
 
-[node name="Label" type="Label" parent="SoundButton/MarginContainer/VBoxContainer"]
+[node name="SoundLabel" type="Label" parent="SoundButton/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Name"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="SoundButton"]
-layout_mode = 2
-offset_right = 40.0
-offset_bottom = 26.0
+[node name="KeyLabel" type="Label" parent="SoundButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 9.00001
+offset_bottom = 20.0
 theme_override_font_sizes/font_size = 10
 text = "7"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="SoundButton" to="." method="_on_sound_button_pressed"]

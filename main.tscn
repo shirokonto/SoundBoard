@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://chsg8dpkdb82y"]
+[gd_scene load_steps=6 format=3 uid="uid://chsg8dpkdb82y"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_3whm3"]
 [ext_resource type="PackedScene" uid="uid://dsgr2bhj6xuj0" path="res://sound_button.tscn" id="1_pbann"]
 [ext_resource type="Script" path="res://SoundButton.gd" id="2_llcw6"]
 [ext_resource type="AudioStream" uid="uid://bmunkuxy6c6k1" path="res://sound/cricket-sound-113945.mp3" id="3_bvi77"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3whm3")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -48,8 +50,11 @@ layout_mode = 2
 text = "Label 1
 "
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="VolumeSllider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
+min_value = -80.0
+max_value = 24.0
+value = 10.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -65,8 +70,12 @@ alignment = 1
 layout_mode = 2
 text = "Label 2"
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="PitchSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2"]
 layout_mode = 2
+min_value = 0.2
+max_value = 4.0
+step = 0.05
+value = 1.0
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -119,3 +128,10 @@ inputAction = "sound8"
 [node name="SoundButton9" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
 inputAction = "sound9"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -80.0
+pitch_scale = 0.01
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VolumeSllider" to="." method="_on_volume_sllider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/PitchSlider" to="." method="_on_pitch_slider_value_changed"]
