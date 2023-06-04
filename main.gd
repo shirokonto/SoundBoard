@@ -14,7 +14,9 @@ func _process(delta):
 
 func _on_pitch_slider_value_changed(value):
 	soundPlayer.pitch_scale = value
+	$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/PitchLabel.text = "Pitch: " + str(snapped(soundPlayer.pitch_scale, 0.01))
 
 
 func _on_volume_sllider_value_changed(value):
 	soundPlayer.volume_db = value
+	$MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/VolumeLabel.text = "Volume: " + str(soundPlayer.volume_db) + " dB"
