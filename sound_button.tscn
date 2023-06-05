@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsgr2bhj6xuj0"]
+[gd_scene load_steps=6 format=3 uid="uid://dsgr2bhj6xuj0"]
 
 [ext_resource type="Script" path="res://SoundButton.gd" id="1_ob8a7"]
-[ext_resource type="Texture2D" uid="uid://1huphppj525i" path="res://art/notifications_FILL0_wght700_GRAD0_opsz48.svg" id="2_4bebj"]
+[ext_resource type="AudioStream" uid="uid://cdp33e0i3it8d" path="res://sound/error.mp3" id="2_3wthx"]
+[ext_resource type="Theme" uid="uid://wtsycd53wvra" path="res://theme/button and slidert.tres" id="2_5bndl"]
+[ext_resource type="Texture2D" uid="uid://c51i2sculy71l" path="res://art/question_mark_FILL0_wght700_GRAD0_opsz48.svg" id="2_y3sgr"]
+[ext_resource type="Script" path="res://KeyLabel.gd" id="4_h3t42"]
 
 [node name="SoundButton" type="Control"]
 layout_mode = 3
@@ -11,12 +14,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ob8a7")
-index = null
+sfx = ExtResource("2_3wthx")
 
 [node name="SoundButton" type="Button" parent="."]
 layout_mode = 2
 offset_right = 60.0
 offset_bottom = 85.0
+theme = ExtResource("2_5bndl")
 
 [node name="MarginContainer" type="MarginContainer" parent="SoundButton"]
 layout_mode = 0
@@ -32,21 +36,24 @@ layout_mode = 2
 theme_override_constants/separation = 1
 
 [node name="TextureRect" type="TextureRect" parent="SoundButton/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
-texture = ExtResource("2_4bebj")
+texture = ExtResource("2_y3sgr")
+stretch_mode = 4
 
 [node name="SoundLabel" type="Label" parent="SoundButton/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Name"
 horizontal_alignment = 1
 
-[node name="KeyLabel" type="Label" parent="SoundButton"]
+[node name="KeyLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
-offset_right = 9.00001
+offset_right = 22.0
 offset_bottom = 20.0
 theme_override_font_sizes/font_size = 10
-text = "7"
+text = "N/A"
+script = ExtResource("4_h3t42")
 
 [connection signal="pressed" from="SoundButton" to="." method="_on_sound_button_pressed"]

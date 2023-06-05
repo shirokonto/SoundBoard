@@ -1,15 +1,17 @@
 extends Control
 
 @export var sfx: AudioStream
-@export var index: int 
+@export var index: int = 1
+@export var texture: Texture
 @onready var soundPlayer = get_tree().get_root().get_node("Main/AudioStreamPlayer")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	sound player
+	pass
 
 func _ready():
-	pass
+	if texture != null:
+		$SoundButton/MarginContainer/VBoxContainer/TextureRect.texture = texture
 
 func _on_sound_button_pressed():
 	play_sound()
@@ -24,4 +26,4 @@ func play_sound():
 		sfx.set_loop(false)
 		soundPlayer.stream = sfx
 		soundPlayer.play()
-		print("sfx")
+		print("playing " + str(sfx.resource_name))

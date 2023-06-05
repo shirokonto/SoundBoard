@@ -1,10 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://chsg8dpkdb82y"]
+[gd_scene load_steps=20 format=3 uid="uid://chsg8dpkdb82y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_3whm3"]
 [ext_resource type="PackedScene" uid="uid://dsgr2bhj6xuj0" path="res://sound_button.tscn" id="1_pbann"]
+[ext_resource type="Theme" uid="uid://wtsycd53wvra" path="res://theme/button and slidert.tres" id="2_kb62m"]
 [ext_resource type="Script" path="res://SoundButton.gd" id="2_llcw6"]
-[ext_resource type="AudioStream" uid="uid://bmunkuxy6c6k1" path="res://sound/cricket-sound-113945.mp3" id="3_bvi77"]
-[ext_resource type="AudioStream" uid="uid://cdp33e0i3it8d" path="res://sound/error-126627.mp3" id="4_23m4s"]
+[ext_resource type="AudioStream" uid="uid://c5arx1kujcsqs" path="res://sound/slay.mp3" id="5_ancyy"]
+[ext_resource type="AudioStream" uid="uid://b5vkp2p0f6kna" path="res://sound/bodenlos.mp3" id="6_a8y04"]
+[ext_resource type="Texture2D" uid="uid://c2hgsho87vnnf" path="res://art/auto_awesome_FILL0_wght700_GRAD0_opsz48.svg" id="6_ug721"]
+[ext_resource type="AudioStream" uid="uid://b2nkjxeb31ptb" path="res://sound/smash.mp3" id="7_0floo"]
+[ext_resource type="AudioStream" uid="uid://cdtox4w3atmc1" path="res://sound/bre.mp3" id="7_h5kip"]
+[ext_resource type="Texture2D" uid="uid://bqkuuo32lys3n" path="res://art/explosion_FILL0_wght700_GRAD0_opsz48.svg" id="8_hda67"]
+[ext_resource type="AudioStream" uid="uid://cvd0uirmfgcom" path="res://sound/sus.mp3" id="8_oy3gj"]
+[ext_resource type="AudioStream" uid="uid://cycdt8stunjtt" path="res://sound/wyld.mp3" id="10_m2467"]
+[ext_resource type="AudioStream" uid="uid://byup77tr33vsj" path="res://sound/macher.mp3" id="10_xoaqr"]
+[ext_resource type="AudioStream" uid="uid://co28ctglrquhp" path="res://sound/siu.mp3" id="11_4721h"]
+[ext_resource type="Texture2D" uid="uid://buorw0u8yhriy" path="res://art/local_fire_department_FILL0_wght700_GRAD0_opsz48.svg" id="11_gajph"]
+[ext_resource type="Texture2D" uid="uid://orr0nguvn7dv" path="res://art/Arm.svg" id="11_x447u"]
+[ext_resource type="AudioStream" uid="uid://6ohp55xcb8y" path="res://sound/digga.mp3" id="14_0aid8"]
+[ext_resource type="Texture2D" uid="uid://dk4fvu20t02bx" path="res://art/done_FILL0_wght700_GRAD0_opsz48.svg" id="14_y64wv"]
+[ext_resource type="Texture2D" uid="uid://c8174oa20gsvl" path="res://art/Bodenlos.svg" id="16_egv2v"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -52,8 +66,9 @@ text = "Label 1
 
 [node name="VolumeSllider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
-min_value = -80.0
-max_value = 24.0
+theme = ExtResource("2_kb62m")
+min_value = -30.0
+max_value = 30.0
 value = 10.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -72,6 +87,7 @@ text = "Label 2"
 
 [node name="PitchSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("2_kb62m")
 min_value = 0.2
 max_value = 4.0
 step = 0.05
@@ -89,45 +105,55 @@ theme_override_constants/h_separation = 100
 theme_override_constants/v_separation = 115
 columns = 3
 script = ExtResource("2_llcw6")
-index = null
 
 [node name="SoundButton7" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+sfx = ExtResource("5_ancyy")
 index = 7
-sfx = ExtResource("3_bvi77")
+texture = ExtResource("6_ug721")
 
 [node name="SoundButton8" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+sfx = ExtResource("7_0floo")
 index = 8
-sfx = ExtResource("3_bvi77")
+texture = ExtResource("8_hda67")
 
 [node name="SoundButton9" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+sfx = ExtResource("8_oy3gj")
 index = 9
-sfx = ExtResource("4_23m4s")
 
 [node name="SoundButton4" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+sfx = ExtResource("10_m2467")
 index = 4
+texture = ExtResource("11_gajph")
 
 [node name="SoundButton5" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+sfx = ExtResource("10_xoaqr")
 index = 5
+texture = ExtResource("11_x447u")
 
 [node name="SoundButton6" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+sfx = ExtResource("11_4721h")
 index = 6
+texture = ExtResource("14_y64wv")
 
 [node name="SoundButton1" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
-index = 1
+sfx = ExtResource("6_a8y04")
+texture = ExtResource("16_egv2v")
 
 [node name="SoundButton2" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+sfx = ExtResource("7_h5kip")
 index = 2
 
 [node name="SoundButton3" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("1_pbann")]
 layout_mode = 2
+sfx = ExtResource("14_0aid8")
 index = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
