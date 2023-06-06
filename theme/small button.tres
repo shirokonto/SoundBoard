@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://clgd64uq23chc"]
+
+[ext_resource type="FontFile" uid="uid://dy47pjun6hw4l" path="res://fonts/Roboto-Light.ttf" id="1_33xy3"]
+[ext_resource type="StyleBox" uid="uid://cqua6ef6s67u8" path="res://theme/small_button_style_box.tres" id="2_s7pon"]
+[ext_resource type="Texture2D" uid="uid://tuiybbe71n7w" path="res://art/Slider.svg" id="3_sjpr1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_deh1o"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[resource]
+Button/fonts/font = ExtResource("1_33xy3")
+Button/styles/normal = ExtResource("2_s7pon")
+HSlider/icons/grabber = ExtResource("3_sjpr1")
+HSlider/icons/grabber_highlight = ExtResource("3_sjpr1")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_deh1o")
+Label/fonts/font = ExtResource("1_33xy3")

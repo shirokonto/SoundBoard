@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://wtsycd53wvra"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://wtsycd53wvra"]
 
 [ext_resource type="StyleBox" uid="uid://dea6nt7cxgytt" path="res://theme/button_style_box.tres" id="1_5mjqp"]
+[ext_resource type="FontFile" uid="uid://dy47pjun6hw4l" path="res://fonts/Roboto-Light.ttf" id="1_okyv0"]
 [ext_resource type="Texture2D" uid="uid://tuiybbe71n7w" path="res://art/Slider.svg" id="2_5pjrw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_deh1o"]
@@ -10,7 +11,9 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [resource]
+Button/fonts/font = ExtResource("1_okyv0")
 Button/styles/normal = ExtResource("1_5mjqp")
 HSlider/icons/grabber = ExtResource("2_5pjrw")
 HSlider/icons/grabber_highlight = ExtResource("2_5pjrw")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_deh1o")
+Label/fonts/font = ExtResource("1_okyv0")
